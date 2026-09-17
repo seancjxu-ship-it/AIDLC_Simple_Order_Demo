@@ -1,0 +1,13 @@
+{
+  "policy_id": "AIDLC-GATE-001",
+  "name_en": "Minimal deterministic quality gate",
+  "name_zh": "最小确定性质量门禁",
+  "write_mode": "pull-request-only",
+  "allowed_change_paths": ["src/order_service.py"],
+  "required_command": "python -m unittest discover -s tests -v",
+  "required_test_count": 4,
+  "required_approvals": ["code-owner"],
+  "deny_on_test_failure": true,
+  "evidence": ["commit_sha", "test_result", "changed_files", "model_usage"]
+}
+

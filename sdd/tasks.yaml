@@ -1,0 +1,25 @@
+feature: FEAT-001
+title_en: Idempotent order cancellation
+title_zh: 幂等取消订单
+allowed_paths:
+  - src/order_service.py
+tasks:
+  - id: TASK-001
+    requirement: REQ-KEY
+    owner: developer-agent
+    action_en: Reject an empty idempotency key.
+    action_zh: 拒绝空的幂等键。
+  - id: TASK-002
+    requirement: REQ-REPLAY
+    owner: developer-agent
+    action_en: Replay the original response for a repeated key.
+    action_zh: 对重复幂等键返回第一次响应。
+  - id: TASK-003
+    requirement: REQ-AUDIT
+    owner: qa-agent
+    action_en: Verify that replay does not duplicate the audit event.
+    action_zh: 验证重放不会重复产生审计事件。
+gate:
+  command: python -m unittest discover -s tests -v
+  expected_tests: 4
+

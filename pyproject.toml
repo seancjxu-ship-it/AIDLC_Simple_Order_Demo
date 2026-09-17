@@ -1,0 +1,13 @@
+[project]
+name = "aidlc-simple-order-demo"
+version = "1.0.0"
+description = "Bilingual minimal repository for an AIDLC GitHub demo"
+requires-python = ">=3.10"
+dependencies = []
+
+[tool.aidlc]
+spec = "sdd/spec.md"
+design = "sdd/design.md"
+tasks = "sdd/tasks.yaml"
+gate = "policies/quality-gate.json"
+
